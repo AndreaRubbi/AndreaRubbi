@@ -2,7 +2,9 @@
 <img alt="Andrea Rubbi Banner" src="./assets/Banner.png" width="100%"/>
 
 
-## 👨🏻‍💻 &nbsp;About
+## 👨🏻‍💻 &nbsp;About 
+<a href="https://www.linkedin.com/in/andrea-rubbi-9a06021a1/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
+<a href="mailto:andrea.rubbi.98@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
 
 💡 &nbsp; Computational Biologist </br>
 🎓 &nbsp; PhD Researcher at the Univeristy of Cambridge </br>
@@ -32,17 +34,7 @@
 ![RStudio](https://img.shields.io/badge/-RStudio-05122A?style=flat&logo=rstudio)&nbsp;
 ![Illustrator](https://img.shields.io/badge/-Illustrator-05122A?style=flat&logo=adobe-illustrator)&nbsp;
 
-<img alt="DNA" src="./assets/images/DNA.gif" width="100%" height="200"/>
-
-<p align="center">
-<a href="https://www.linkedin.com/in/andrea-rubbi-9a06021a1/"><img src="https://img.shields.io/badge/linkedin-%230077B5.svg?style=for-the-badge&logo=linkedin&logoColor=white"></a>
-<a href="mailto:andrea.rubbi.98@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
-
-
-
-___
-
-### ⚙️ &nbsp;GitHub Analytics
+## ⚙️ &nbsp;GitHub Analytics
 
 <p align="center">
 <a href="https://github.com/AndreaRubbi">
