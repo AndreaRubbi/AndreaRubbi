@@ -1,4 +1,3 @@
-![]()
 <img alt="Andrea Rubbi Banner" src="./assets/Banner.png" width="100%"/>
 
 
