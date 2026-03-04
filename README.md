@@ -6,19 +6,9 @@
 <a href="mailto:andrea.rubbi.98@gmail.com"><img src="https://img.shields.io/badge/Gmail-D14836?style=for-the-badge&logo=gmail&logoColor=white"></a>
 
 💡 &nbsp; Computational Biologist </br>
-🎓 &nbsp; PhD Researcher at the Univeristy of Cambridge </br>
+🎓 &nbsp; PhD Researcher at the University of Cambridge and Sanger Institute</br>
 🎓 &nbsp; Master's in Molecular Biotechnology and Bioinformatics </br>
 🎓 &nbsp; Bachelor's in Genomics </br>
-🌱 &nbsp; Eager to elaborate new ML approaches to explore the interplay of biological and environmental factor in complex diseases </br> 
-✍️ &nbsp; Statistical and Probabilistic Machine Learning </br>
-💬 &nbsp;Feel free to reach out to me to discuss about research and possible collaborations! </br>
-✉️ &nbsp; Email me at: <ul>
-<li> <a href="mailto:ar2232@cam.ac.uk">ar2232@cam.ac.uk</a> 
-<li> <a href="mailto:ar2232@mit.edu">ar2232@mit.edu</a> 
-<li> <a href="mailto:ar36@sanger.ac.uk">ar36@sanger.ac.uk</a>
-</li> </ul>
-
-
 
 ## 🛠 &nbsp;Tech Stack
 
