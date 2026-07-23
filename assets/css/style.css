@@ -1145,6 +1145,23 @@ main {
  * photography intro, genres & featured reel
  */
 
+.photo-hero { margin-bottom: 24px; }
+
+.photo-hero-img {
+  border-radius: 20px;
+}
+
+.photo-hero-img img {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+  display: block;
+}
+
+@media (min-width: 700px) {
+  .photo-hero-img img { height: 380px; }
+}
+
 .photo-intro { margin-bottom: 22px; }
 
 .photo-lead {

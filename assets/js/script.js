@@ -184,12 +184,10 @@ const prefersReducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)
      for visitors who prefer reduced motion.
      ============================================================ */
   const roles = [
-    "AI × Biology Researcher",
-    "Generative Models for Cells",
-    "PhD · Cambridge & Sanger",
-    "Flow Matching & Diffusion",
-    "Single-cell Perturbation ML",
-    "Turning data into biology"
+    "PhD Researcher",
+    "Generative AI",
+    "Active Discovery",
+    "Molecular Modelling",
   ];
 
   if (prefersReducedMotion) {
@@ -390,16 +388,9 @@ if (lightbox && galleryItems.length) {
     if (!figure || figure.querySelector(".gallery-caption")) return;
     const type = item.dataset.type || "";
     const date = item.dataset.date || "";
-    const title = item.dataset.title || "";
-    if (!type && !date && !title) return;
+    if (!type && !date) return;
     const cap = document.createElement("figcaption");
     cap.className = "gallery-caption";
-    if (title) {
-      const c = document.createElement("span");
-      c.className = "gallery-cap-concept";
-      c.textContent = title;
-      cap.appendChild(c);
-    }
     if (type) {
       const t = document.createElement("span");
       t.className = "gallery-cap-type";
