@@ -1,0 +1,5 @@
+# macOS
+.DS_Store
+
+# Full-resolution photo originals (web-optimized copies live in Portfolio/)
+_originals/

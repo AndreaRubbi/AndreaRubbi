@@ -34,10 +34,15 @@
   -->
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&family=Space+Grotesk:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap"
+    rel="stylesheet">
 </head>
 
 <body>
+
+  <!-- animated ambient background -->
+  <div class="bg-aurora" aria-hidden="true"></div>
 
   <!--
     - #MAIN
@@ -60,7 +65,27 @@
         <div class="info-content">
           <h1 class="name" title="Andrea Rubbi">Andrea Rubbi</h1>
 
-          <p class="title">Computational Biologist</p>
+          <p class="title" data-role-rotator>Computational Biologist</p>
+
+          <!--
+            ============================================================
+            AFFILIATION LOGOS (full colour, shown in the sidebar)
+            To add/remove an affiliation, copy one <a>…</a> block below.
+            Keep images ~small; they auto-scale to a fixed height.
+            ============================================================
+          -->
+          <ul class="sidebar-logos">
+            <li>
+              <a href="https://www.cam.ac.uk/" target="_blank" rel="noopener" title="University of Cambridge">
+                <img src="./assets/images/Colour_logo_RGB.png" alt="University of Cambridge">
+              </a>
+            </li>
+            <li>
+              <a href="https://www.sanger.ac.uk/" target="_blank" rel="noopener" title="Wellcome Sanger Institute">
+                <img src="./assets/images/Wellcome_Sanger.png" alt="Wellcome Sanger Institute">
+              </a>
+            </li>
+          </ul>
         </div>
 
         <button class="info_more-btn" data-sidebar-btn>
@@ -140,14 +165,26 @@
         <ul class="social-list">
 
           <li class="social-item">
-            <a href="https://www.linkedin.com/in/andrea-rubbi-9a06021a1/" class="social-link">
+            <a href="https://www.linkedin.com/in/andrea-rubbi-9a06021a1/" class="social-link" title="LinkedIn" target="_blank" rel="noopener">
               <ion-icon name="logo-linkedin"></ion-icon>
             </a>
           </li>
 
           <li class="social-item">
-            <a href="https://github.com/AndreaRubbi" class="social-link">
+            <a href="https://github.com/AndreaRubbi" class="social-link" title="GitHub" target="_blank" rel="noopener">
               <ion-icon name="logo-github"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://scholar.google.com/citations?user=andrea+rubbi" class="social-link" title="Google Scholar" target="_blank" rel="noopener">
+              <ion-icon name="school-outline"></ion-icon>
+            </a>
+          </li>
+
+          <li class="social-item">
+            <a href="https://x.com/" class="social-link" title="X" target="_blank" rel="noopener">
+              <ion-icon name="logo-twitter"></ion-icon>
             </a>
           </li>
 
@@ -184,7 +221,19 @@
           </li>
 
           <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Research</button>
+          </li>
+
+          <li class="navbar-item">
             <button class="navbar-link" data-nav-link>Projects</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Blog</button>
+          </li>
+
+          <li class="navbar-item">
+            <button class="navbar-link" data-nav-link>Photography</button>
           </li>
         </ul>
       </nav>
@@ -219,18 +268,68 @@
           <h2 class="h2 article-title">About me</h2>
         </header>
 
+        <!--
+          ============================================================
+          AI × BIO HERO ANIMATION
+          A rotating DNA double-helix drawn on a <canvas> by
+          assets/js/hero.js. Purely decorative — it falls back to a
+          static gradient if JavaScript or motion is disabled.
+          EDIT the two lines of text below however you like.
+          ============================================================
+        -->
+        <section class="hero-dna" aria-label="AI and Biology">
+          <canvas class="hero-dna-canvas" data-hero-dna></canvas>
+          <div class="hero-dna-overlay">
+            <p class="hero-dna-kicker">AI <span>×</span> Biology</p>
+            <p class="hero-dna-tag">machine learning that speaks the language of cells</p>
+          </div>
+        </section>
+
         <section class="about-text">
-          <p>
-            As a computational biologist, I study how cellular systems respond to genetic and environmental
-            perturbations and how these responses contribute to the emergence of complex diseases. My research
-            integrates probabilistic modeling, generative learning, and causal inference to characterize cellular
-            dynamics and heterogeneity from single-cell and multimodal data. I develop machine learning frameworks
-            grounded in statistical and geometric principles, including flow matching, variational inference, and
-            representation learning, to model the underlying structure of biological processes and predict the effects
-            of perturbations. A key goal of my work is to design models that not only achieve accurate predictions but
-            also provide mechanistic and interpretable insights, ultimately enabling more efficient experimental design
-            and informed therapeutic strategies.
+          <p class="about-lead">
+            I work at the intersection of <strong>artificial intelligence and biology</strong> — building
+            machine-learning methods that learn the language of cells, sequences and molecules.
           </p>
+          <p>
+            Most of my research is generative: I design flow-matching, diffusion and probabilistic models that
+            simulate cellular dynamics and predict how biological systems respond to genetic and chemical
+            perturbations. More broadly, I work across sequence- and structure-aware modelling, uncertainty
+            estimation and representation learning — with a consistent goal of turning predictive models into
+            mechanistic, interpretable and experimentally useful insight.
+          </p>
+        </section>
+
+        <section class="about-extra">
+
+          <ul class="stats-row">
+            <li class="stat">
+              <b>PhD</b>
+              <span>Cambridge · Sanger</span>
+            </li>
+            <li class="stat">
+              <b>AI × Bio</b>
+              <span>Research focus</span>
+            </li>
+            <li class="stat">
+              <b>6+</b>
+              <span>Papers &amp; preprints</span>
+            </li>
+            <li class="stat">
+              <b>Open</b>
+              <span>Source software</span>
+            </li>
+          </ul>
+
+          <ul class="chip-row">
+            <li class="chip">Generative Modelling</li>
+            <li class="chip">Flow Matching</li>
+            <li class="chip">Single-cell Biology</li>
+            <li class="chip">Perturbation Prediction</li>
+            <li class="chip">Sequence &amp; Structure</li>
+            <li class="chip">Probabilistic ML</li>
+            <li class="chip">Representation Learning</li>
+          </ul>
+
         </section>
 
 
@@ -239,253 +338,72 @@
         -->
 
         <section class="service">
-          <!--
-          <h3 class="h3 service-title">My Work</h3>
-        -->
+
+          <h3 class="h3 service-title">What I work on</h3>
+
           <ul class="service-list">
 
             <li class="service-item">
 
               <div class="service-icon-box">
-                <img src="./assets/images/dna-svgrepo-com.svg" alt="dna icon" width="40">
+                <ion-icon name="sparkles-outline"></ion-icon>
               </div>
 
               <div class="service-content-box">
-                <h4 class="h4 service-item-title">Computational Biology</h4>
-
-                <!--
+                <h4 class="h4 service-item-title">Generative AI for Biology</h4>
                 <p class="service-item-text">
-
-                </p>
-                -->
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/coding-programming-language-svgrepo-com.svg" alt="coding icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Coding</h4>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/education-learn-learning-svgrepo-com.svg" alt="education icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Machine Learning</h4>
-              </div>
-
-            </li>
-
-            <li class="service-item">
-
-              <div class="service-icon-box">
-                <img src="./assets/images/brain-svgrepo-com.svg" alt="brain icon" width="40">
-              </div>
-
-              <div class="service-content-box">
-                <h4 class="h4 service-item-title">Perturbation Modeling</h4>
-              </div>
-
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials
-        -->
-
-        <section class="testimonials">
-
-          <h3 class="h3 testimonials-title">Supervisors</h3>
-
-          <ul class="testimonials-list has-scrollbar">
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/pietro_lio.jpg" alt="Dr Pietro Lio" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Prof Pietro Lio</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    The aim of Professor Pietro Liò's research programme is developing
-                    computational models that bridge machine learning, systems biology,
-                    and medicine to understand complex biological processes and human diseases.
-                    His group focuses on graph-based deep learning, generative models,
-                    and multi-scale simulations to study molecular interactions, cellular dynamics,
-                    and clinical outcomes in health and disease.
-                    <a href="https://www.cl.cam.ac.uk/~pl219/">Liò Group</a>
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/lotfollahi.jpg" alt="Dr Mo Loftollahi" width="60" data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Dr Mo Loftollahi</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    My team and I seek to leverage artificial intelligence (AI)
-                    and machine learning (ML) models
-                    to capture the real-world behaviour of
-                    all the cells within individual human organs.
-                    <a href="https://www.sanger.ac.uk/group/lotfollahi-group/">Loftollahi's Group</a>
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/manolis_kellis.png" alt="Prof Manolis Kellis" width="60"
-                    data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Prof Manolis Kellis</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    Our group at MIT aims to further our understanding
-                    of the human genome by computational integration
-                    of large-scale functional and comparative genomics datasets.
-                    <a href="https://compbio.mit.edu/">Kellis' Group</a>
-
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-            <li class="testimonials-item">
-              <div class="content-card" data-testimonials-item>
-
-                <figure class="testimonials-avatar-box">
-                  <img src="./assets/images/miguel_martins.jpg" alt="Dr Miguel Martins" width="60"
-                    data-testimonials-avatar>
-                </figure>
-
-                <h4 class="h4 testimonials-item-title" data-testimonials-title>Dr Miguel Martins</h4>
-
-                <div class="testimonials-text" data-testimonials-text>
-                  <p>
-                    The aim of Miguel's research programme is understanding
-                    the cellular and molecular mechanisms that mitochondria
-                    use, as signaling hubs, for coping with toxic insults.
-                    <a href="https://www.mrc-tox.cam.ac.uk/research/research-groups/martins-group">Martins' Group</a>
-                  </p>
-                </div>
-
-              </div>
-            </li>
-
-          </ul>
-
-        </section>
-
-
-        <!--
-          - testimonials modal
-        -->
-
-        <div class="modal-container" data-modal-container>
-
-          <div class="overlay" data-overlay></div>
-
-          <section class="testimonials-modal">
-
-            <button class="modal-close-btn" data-modal-close-btn>
-              <ion-icon name="close-outline"></ion-icon>
-            </button>
-
-            <div class="modal-img-wrapper">
-              <figure class="modal-avatar-box">
-                <img src="./assets/images/avatar-1.png" alt="Daniel lewis" width="80" data-modal-img>
-              </figure>
-
-              <img src="./assets/images/icon-quote.svg" alt="quote icon">
-            </div>
-
-            <div class="modal-content">
-
-              <h4 class="h3 modal-title" data-modal-title>Daniel lewis</h4>
-
-              <!-- <time datetime="2021-06-14"></time> -->
-
-              <div data-modal-text>
-                <p>
-                  Richard was hired to create a corporate identity. We were very pleased with the work done. She has a
-                  lot of experience
-                  and is very concerned about the needs of client. Lorem ipsum dolor sit amet, ullamcous cididt
-                  consectetur adipiscing
-                  elit, seds do et eiusmod tempor incididunt ut laborels dolore magnarels alia.
+                  Flow-matching, diffusion and probabilistic models that simulate cellular states and generate
+                  realistic biological data.
                 </p>
               </div>
 
-            </div>
-
-          </section>
-
-        </div>
-
-
-        <!--
-          - clients
-        -->
-
-        <section class="clients">
-
-          <h3 class="h3 clients-title">Affiliations</h3>
-
-          <ul class="clients-list has-scrollbar">
-
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/Colour_logo_RGB.png" alt="client logo">
-              </a>
             </li>
 
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/Wellcome_Sanger.png" alt="client logo">
-              </a>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="cellular-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Single-cell &amp; Perturbations</h4>
+                <p class="service-item-text">
+                  Predicting how cells respond to genetic and chemical perturbations from single-cell and
+                  multimodal data.
+                </p>
+              </div>
+
             </li>
 
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/CSAIL_logo.png" alt="client logo">
-              </a>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="cube-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Sequence &amp; Structure Modelling</h4>
+                <p class="service-item-text">
+                  Representation learning across genomic sequences and molecular structure to link genotype
+                  with function.
+                </p>
+              </div>
+
             </li>
 
-            <li class="clients-item">
-              <a href="#">
-                <img src="./assets/images/MRC_TU_Cambridge_identifier_horizontal_RGB2_a.png" alt="client logo">
-              </a>
+            <li class="service-item">
+
+              <div class="service-icon-box">
+                <ion-icon name="git-network-outline"></ion-icon>
+              </div>
+
+              <div class="service-content-box">
+                <h4 class="h4 service-item-title">Probabilistic &amp; Open Science</h4>
+                <p class="service-item-text">
+                  Uncertainty-aware, interpretable methods — released as open, reproducible research software.
+                </p>
+              </div>
+
             </li>
 
           </ul>
@@ -504,6 +422,35 @@
           <h2 class="h2 article-title">Resume</h2>
         </header>
 
+        <section class="now-section">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="radio-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Currently</h3>
+          </div>
+
+          <ul class="now-grid">
+
+            <li class="now-card">
+              <span class="now-live"><span class="now-dot"></span>Live</span>
+              <h4 class="h4 now-role">PhD Researcher — Generative AI for Biology</h4>
+              <p class="now-org">University of Cambridge &amp; Wellcome Sanger Institute</p>
+              <span class="now-when">2023 — Present</span>
+            </li>
+
+            <li class="now-card">
+              <span class="now-live"><span class="now-dot"></span>Live</span>
+              <h4 class="h4 now-role">Research Scientist Intern — AI for Antibodies</h4>
+              <p class="now-org">AstraZeneca · Cambridge</p>
+              <span class="now-when">Jul — Oct 2026</span>
+            </li>
+
+          </ul>
+
+        </section>
+
         <section class="timeline">
 
           <div class="title-wrapper">
@@ -518,9 +465,11 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title"> PhD Computer Science (Computational Biology)</h4>
+              <h4 class="h4 timeline-item-title">PhD in Computational Biology</h4>
               <p class="timeline-text">
-                University of Cambridge & Sanger Institute
+                University of Cambridge (Computer Science) &amp; Wellcome Sanger Institute — generative AI for
+                single-cell perturbations, molecule design and probabilistic ML.
+                Supervisors: Prof. Pietro Liò &amp; Dr. Mohammad Lotfollahi.
               </p>
               <span>2023 — Present</span>
 
@@ -528,9 +477,20 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title"> Molecular Biotechnology and Bioinformatics</h4>
+              <h4 class="h4 timeline-item-title">MSc Exchange — Machine Learning &amp; Artificial Intelligence</h4>
               <p class="timeline-text">
-                Università degli Studi di Milano
+                Utrecht University — advanced machine learning and AI.
+              </p>
+              <span>2021 — 2022</span>
+
+            </li>
+
+            <li class="timeline-item">
+
+              <h4 class="h4 timeline-item-title">MSc Molecular Biotechnology &amp; Bioinformatics</h4>
+              <p class="timeline-text">
+                University of Milan — 110/110 <em>cum laude</em>. Thesis: statistical models to infer the causal
+                process of somatic mutations in humans.
               </p>
               <span>2020 — 2022</span>
 
@@ -538,12 +498,114 @@
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Genomics</h4>
+              <h4 class="h4 timeline-item-title">BSc Genomics</h4>
               <p class="timeline-text">
-                Alma Mater Studiorum - Università di Bologna
+                University of Bologna — 110/110 <em>cum laude</em>. Thesis: programming of liquid-handling platforms
+                for DNA-assembly automation.
               </p>
               <span>2017 — 2020</span>
 
+            </li>
+
+          </ol>
+
+        </section>
+
+        <section class="timeline exp-section">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="code-slash-outline"></ion-icon>
+            </div>
+
+            <h3 class="h3">Experience</h3>
+          </div>
+
+          <div class="exp-filters" data-exp-filters>
+            <button class="filter-chip active" data-filter="all">All</button>
+            <button class="filter-chip" data-filter="industry">Industry</button>
+            <button class="filter-chip" data-filter="research">Research</button>
+            <button class="filter-chip" data-filter="internships">Internships</button>
+          </div>
+
+          <ol class="timeline-list" data-exp-list>
+
+            <li class="timeline-item" data-cat="industry">
+              <span class="timeline-badge cat-industry">Industry</span>
+              <h4 class="h4 timeline-item-title">Research Scientist Intern — AI for Antibodies</h4>
+              <p class="timeline-text">
+                AstraZeneca, Cambridge — machine-learning methods for antibody discovery and design, as part of an
+                industrial PhD placement.
+              </p>
+              <span>Jul — Oct 2026</span>
+            </li>
+
+            <li class="timeline-item" data-cat="research">
+              <span class="timeline-badge cat-research">Research</span>
+              <h4 class="h4 timeline-item-title">PhD Researcher</h4>
+              <p class="timeline-text">
+                University of Cambridge &amp; Wellcome Sanger Institute — generative and probabilistic models for
+                predicting single-cell perturbation responses and guiding experimental design.
+              </p>
+              <span>2023 — Present</span>
+            </li>
+
+            <li class="timeline-item" data-cat="research">
+              <span class="timeline-badge cat-research">Research</span>
+              <h4 class="h4 timeline-item-title">Research Affiliate</h4>
+              <p class="timeline-text">
+                Kellis Lab, MIT-CSAIL — contextualized machine learning for interpretable biological modelling.
+              </p>
+              <span>2023 — 2025</span>
+            </li>
+
+            <li class="timeline-item" data-cat="research">
+              <span class="timeline-badge cat-research">Research</span>
+              <h4 class="h4 timeline-item-title">Visiting PhD Student</h4>
+              <p class="timeline-text">
+                Fortuin Group, Helmholtz AI, Munich — Bayesian and ensemble-based uncertainty estimation for
+                single-cell representation learning.
+              </p>
+              <span>2024</span>
+            </li>
+
+            <li class="timeline-item" data-cat="research">
+              <span class="timeline-badge cat-research">Research</span>
+              <h4 class="h4 timeline-item-title">Computational Biologist</h4>
+              <p class="timeline-text">
+                Kellis Lab, MIT-CSAIL — a framework for contextualized differential-expression analysis.
+              </p>
+              <span>2023</span>
+            </li>
+
+            <li class="timeline-item" data-cat="research internships">
+              <span class="timeline-badge cat-internship">Internship</span>
+              <h4 class="h4 timeline-item-title">Bioinformatician — EMBL-EBI</h4>
+              <p class="timeline-text">
+                Goldman Group, EMBL-EBI, Cambridge — tools for large-scale statistical analysis of phylogenetic
+                tree collections.
+              </p>
+              <span>2022 — 2023</span>
+            </li>
+
+            <li class="timeline-item" data-cat="research internships">
+              <span class="timeline-badge cat-internship">Internship</span>
+              <h4 class="h4 timeline-item-title">Bioinformatician — Princess Máxima Center</h4>
+              <p class="timeline-text">
+                Van Boxtel Group, Princess Máxima Center, Utrecht — machine learning for mutational processes and
+                chemotherapy-induced mutagenesis.
+              </p>
+              <span>2021 — 2022</span>
+            </li>
+
+            <li class="timeline-item" data-cat="industry internships">
+              <span class="timeline-badge cat-internship">Internship</span>
+              <h4 class="h4 timeline-item-title">Bioinformatician — Explora Biotech</h4>
+              <p class="timeline-text">
+                Doulix, Explora Biotech, Venice — computational workflows for large-scale production of custom DNA
+                constructs.
+              </p>
+              <span>2020</span>
             </li>
 
           </ol>
@@ -554,99 +616,84 @@
 
           <div class="title-wrapper">
             <div class="icon-box">
-              <ion-icon name="code-slash-outline"></ion-icon>
+              <ion-icon name="school-outline"></ion-icon>
             </div>
 
-            <h3 class="h3">Experience</h3>
+            <h3 class="h3">Teaching</h3>
           </div>
 
           <ol class="timeline-list">
+
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Research in Contextualized ML</h4>
+              <h4 class="h4 timeline-item-title">Supervisor &amp; Demonstrator</h4>
               <p class="timeline-text">
-                Kellis Lab - MIT-CSAIL
+                Department of Computer Science and Technology, University of Cambridge — Bioinformatics (third-year CS),
+                Machine Learning &amp; Bayesian Inference (third-year CS), and Machine Learning &amp; Real-World Data
+                (first-year CS).
               </p>
-              <span>2023</span>
             </li>
 
             <li class="timeline-item">
 
-              <h4 class="h4 timeline-item-title">Research in Phylogenetics</h4>
+              <h4 class="h4 timeline-item-title">Teaching Assistant</h4>
               <p class="timeline-text">
-                Goldman Lab - EMBL-EBI
+                Applied Probability and Statistics — supporting undergraduate teaching and problem classes.
               </p>
-              <span>2023</span>
             </li>
 
-            <li class="timeline-item">
-
-              <h4 class="h4 timeline-item-title">Research in ML applied to Genomics</h4>
-              <p class="timeline-text">
-                Van Boxtel Lab - Princess Maxima Center
-              </p>
-              <span>2021 — 2022</span>
-            </li>
           </ol>
 
         </section>
 
         <section class="skill">
 
-          <h3 class="h3 skills-title">Skills</h3>
+          <h3 class="h3 skills-title">Skills &amp; Toolbox</h3>
 
-          <ul class="skills-list content-card">
+          <ul class="skill-groups">
 
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Computational Biology</h5>
-                <data value="85">85%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 85%;"></div>
-              </div>
-
+            <li class="skill-group content-card">
+              <h5 class="h5 skill-group-title">
+                <ion-icon name="terminal-outline"></ion-icon> Languages &amp; Tools
+              </h5>
+              <ul class="skill-tags">
+                <li class="chip">Python</li>
+                <li class="chip">PyTorch</li>
+                <li class="chip">JAX</li>
+                <li class="chip">R</li>
+                <li class="chip">Git</li>
+                <li class="chip">Docker</li>
+                <li class="chip">Linux / HPC</li>
+              </ul>
             </li>
 
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Coding</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
+            <li class="skill-group content-card">
+              <h5 class="h5 skill-group-title">
+                <ion-icon name="git-branch-outline"></ion-icon> ML &amp; Modelling
+              </h5>
+              <ul class="skill-tags">
+                <li class="chip">Flow Matching</li>
+                <li class="chip">Diffusion Models</li>
+                <li class="chip">Variational Inference</li>
+                <li class="chip">Bayesian Deep Learning</li>
+                <li class="chip">Transformers</li>
+                <li class="chip">Graph Neural Networks</li>
+                <li class="chip">Representation Learning</li>
+              </ul>
             </li>
 
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Machine Learning</h5>
-                <data value="80">80%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 80%;"></div>
-              </div>
-
-            </li>
-
-            <li class="skills-item">
-
-              <div class="title-wrapper">
-                <h5 class="h5">Drink Coffee</h5>
-                <data value="100">100%</data>
-              </div>
-
-              <div class="skill-progress-bg">
-                <div class="skill-progress-fill" style="width: 100%;"></div>
-              </div>
-
+            <li class="skill-group content-card">
+              <h5 class="h5 skill-group-title">
+                <ion-icon name="flask-outline"></ion-icon> Biology &amp; Omics
+              </h5>
+              <ul class="skill-tags">
+                <li class="chip">Single-cell Genomics</li>
+                <li class="chip">Perturbation Modelling</li>
+                <li class="chip">Antibody / Protein AI</li>
+                <li class="chip">Multi-omics</li>
+                <li class="chip">Phylogenetics</li>
+                <li class="chip">Experimental Design</li>
+              </ul>
             </li>
 
           </ul>
@@ -671,65 +718,88 @@
 
         <section class="about-text">
           <p>
-            Open-source tools and frameworks I've developed for computational biology research.
+            Open-source tools and research code I build for computational biology and machine learning.
+            Everything here is public — click a card to jump to the repository.
           </p>
         </section>
 
-        <section class="service">
+        <!--
+          ============================================================
+          PROJECTS  —  HOW TO EDIT
+          Each project is one <li class="project-card"> block below.
+          To add a project: copy a whole block and change:
+            • data-tags   (comma-separated chips shown at the bottom)
+            • the href    (link to the repo / page)
+            • the <ion-icon name="…">  (browse icons at ionic.io/ionicons)
+            • the title, description and (optional) .project-badge
+          ============================================================
+        -->
+        <section class="project-section">
+          <ul class="project-grid">
 
-          <ul class="service-list">
-
-            <li class="service-item">
-              <a href="https://github.com/AndreaRubbi/GGE" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="service-icon-box">
-                  <img src="./assets/images/dna-svgrepo-com.svg" alt="dna icon" width="40">
+            <li class="project-card" data-tags="Python, Benchmarking, Generative Models">
+              <a href="https://github.com/AndreaRubbi/GGE" target="_blank" rel="noopener" class="project-card-link">
+                <div class="project-card-top">
+                  <div class="project-icon"><ion-icon name="git-compare-outline"></ion-icon></div>
+                  <span class="project-badge">ICLR 2026 · Top 10%</span>
                 </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">GGE</h4>
-                  <p class="service-item-text">
-                    A Standardized Framework for Evaluating Gene Expression Generative Models
-                  </p>
-                </div>
+                <h3 class="h3 project-title">GGE</h3>
+                <p class="project-text">
+                  A standardized framework for evaluating gene-expression generative models — reproducible
+                  metrics that actually track biological faithfulness.
+                </p>
+                <ul class="project-tags"></ul>
+                <span class="project-link">View on GitHub <ion-icon name="logo-github"></ion-icon></span>
               </a>
             </li>
 
-            <li class="service-item">
-              <a href="https://github.com/Lotfollahi-lab/SP-FM" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="service-icon-box">
-                  <img src="./assets/images/coding-programming-language-svgrepo-com.svg" alt="flow icon" width="40">
+            <li class="project-card" data-tags="PyTorch, Flow Matching, Single-cell">
+              <a href="https://github.com/Lotfollahi-lab/SP-FM" target="_blank" rel="noopener" class="project-card-link">
+                <div class="project-card-top">
+                  <div class="project-icon"><ion-icon name="git-branch-outline"></ion-icon></div>
                 </div>
-
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">SP-FM (MixFlow)</h4>
-                  <p class="service-item-text">
-                    Shortest-Path Flow Matching with Mixture-Conditioned Bases for OOD Generalization to Unseen
-                    Conditions
-                  </p>
-                </div>
+                <h3 class="h3 project-title">SP-FM · MixFlow</h3>
+                <p class="project-text">
+                  Shortest-path flow matching with mixture-conditioned bases, built to generalise
+                  out-of-distribution to unseen perturbation conditions.
+                </p>
+                <ul class="project-tags"></ul>
+                <span class="project-link">View on GitHub <ion-icon name="logo-github"></ion-icon></span>
               </a>
             </li>
 
-            <li class="service-item">
-              <a href="https://github.com/AndreaRubbi/Pear-EBI" target="_blank"
-                style="text-decoration: none; color: inherit;">
-                <div class="service-icon-box">
-                  <img src="./assets/images/education-learn-learning-svgrepo-com.svg" alt="pear icon" width="40">
+            <li class="project-card" data-tags="Python, Phylogenetics, Embeddings">
+              <a href="https://github.com/AndreaRubbi/Pear-EBI" target="_blank" rel="noopener" class="project-card-link">
+                <div class="project-card-top">
+                  <div class="project-icon"><ion-icon name="leaf-outline"></ion-icon></div>
                 </div>
+                <h3 class="h3 project-title">Pear-EBI</h3>
+                <p class="project-text">
+                  Phylogeny Embedding &amp; Approximate Representation — a library to embed, visualise and
+                  compare very large tree spaces.
+                </p>
+                <ul class="project-tags"></ul>
+                <span class="project-link">View on GitHub <ion-icon name="logo-github"></ion-icon></span>
+              </a>
+            </li>
 
-                <div class="service-content-box">
-                  <h4 class="h4 service-item-title">Pear</h4>
-                  <p class="service-item-text">
-                    Phylogeny Embedding & Approximate Representation library
-                  </p>
+            <li class="project-card" data-tags="Contributor, Statistical ML, Interpretability">
+              <a href="https://github.com/cnellington/Contextualized" target="_blank" rel="noopener" class="project-card-link">
+                <div class="project-card-top">
+                  <div class="project-icon"><ion-icon name="git-network-outline"></ion-icon></div>
+                  <span class="project-badge project-badge--muted">Contributor</span>
                 </div>
+                <h3 class="h3 project-title">Contextualized ML</h3>
+                <p class="project-text">
+                  A toolbox for context-adaptive models whose parameters vary with sample metadata —
+                  I contribute to the library developed in the Kellis Lab.
+                </p>
+                <ul class="project-tags"></ul>
+                <span class="project-link">View on GitHub <ion-icon name="logo-github"></ion-icon></span>
               </a>
             </li>
 
           </ul>
-
         </section>
 
         <section class="clients">
@@ -751,247 +821,206 @@
 
 
       <!--
-        - #PORTFOLIO
+        - #RESEARCH
       -->
 
-      <article class="portfolio" data-page="portfolio">
+      <article class="research" data-page="research">
 
         <header>
-          <h2 class="h2 article-title">Portfolio</h2>
+          <h2 class="h2 article-title">Research</h2>
         </header>
 
-        <section class="projects">
+        <section class="about-text">
+          <p>
+            My research sits at the intersection of <strong>AI and biology</strong>. I build machine-learning
+            frameworks — grounded in statistical and geometric principles such as flow matching, variational
+            inference and representation learning — to model cellular dynamics and predict the effects of genetic
+            and chemical perturbations from single-cell and multimodal data, while increasingly extending these
+            ideas to molecular sequence and structure.
+          </p>
+        </section>
 
-          <ul class="filter-list">
+        <section class="chip-row" aria-label="Research interests">
+          <span class="chip">Generative AI for Perturbations &amp; Molecules</span>
+          <span class="chip">Single-cell Perturbation Biology</span>
+          <span class="chip">Uncertainty &amp; Probabilistic ML</span>
+          <span class="chip">Agentic Experimental Design</span>
+          <span class="chip">Structure- &amp; Geometry-aware ML</span>
+        </section>
 
-            <li class="filter-item">
-              <button class="active" data-filter-btn>All</button>
-            </li>
+        <section class="pub-section">
 
-            <li class="filter-item">
-              <button data-filter-btn>Web design</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Applications</button>
-            </li>
-
-            <li class="filter-item">
-              <button data-filter-btn>Web development</button>
-            </li>
-
-          </ul>
-
-          <div class="filter-select-box">
-
-            <button class="filter-select" data-select>
-
-              <div class="select-value" data-selecct-value>Select category</div>
-
-              <div class="select-icon">
-                <ion-icon name="chevron-down"></ion-icon>
-              </div>
-
-            </button>
-
-            <ul class="select-list">
-
-              <li class="select-item">
-                <button data-select-item>All</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web design</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Applications</button>
-              </li>
-
-              <li class="select-item">
-                <button data-select-item>Web development</button>
-              </li>
-
-            </ul>
-
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="document-text-outline"></ion-icon>
+            </div>
+            <h3 class="h3">Selected Publications &amp; Preprints</h3>
           </div>
 
-          <ul class="project-list">
+          <!--
+            NOTE: preprints below are real works. Where an arXiv/DOI link is not yet
+            wired, add it to the matching <a class="pub-link"> when available.
+          -->
+          <ul class="pub-list">
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-1.jpg" alt="finance" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Finance</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
+            <li class="pub-item">
+              <div class="pub-year">2026</div>
+              <div class="pub-body">
+                <h4 class="h4 pub-title">Many Needles in a Haystack: Active Hit Discovery for Perturbation Experiments</h4>
+                <p class="pub-authors">Andrea Rubbi et al. — University of Cambridge &amp; Wellcome Sanger Institute</p>
+                <p class="pub-text">
+                  An active-learning approach for prioritising perturbation experiments, efficiently surfacing rare
+                  "hits" across large combinatorial screening spaces.
+                </p>
+                <div class="pub-links">
+                  <span class="chip chip-venue">ICML 2026</span>
+                  <span class="chip">Active Learning</span>
+                </div>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-2.png" alt="orizon" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Orizon</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
+            <li class="pub-item">
+              <div class="pub-year">2026</div>
+              <div class="pub-body">
+                <h4 class="h4 pub-title">MixFlow: Shortest-Path Flow Matching with Mixture-Conditioned Bases for OOD Generalization</h4>
+                <p class="pub-authors">Andrea Rubbi et al. — Lotfollahi Lab, Wellcome Sanger Institute</p>
+                <p class="pub-text">
+                  A flow-matching framework with mixture-conditioned bases that generalises out-of-distribution to
+                  unseen perturbation conditions in single-cell data.
+                </p>
+                <div class="pub-links">
+                  <span class="chip">Preprint · arXiv</span>
+                  <span class="chip">Flow Matching</span>
+                  <a href="https://github.com/Lotfollahi-lab/SP-FM" target="_blank" rel="noopener" class="pub-link">
+                    <ion-icon name="logo-github"></ion-icon><span>Code</span>
+                  </a>
+                </div>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-3.jpg" alt="fundo" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Fundo</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
+            <li class="pub-item">
+              <div class="pub-year">2026</div>
+              <div class="pub-body">
+                <h4 class="h4 pub-title">Retrieval-Augmented Generation for Predicting Cellular Responses to Gene Perturbation</h4>
+                <p class="pub-authors">Andrea Rubbi et al. — co-first author (equal contribution)</p>
+                <p class="pub-text">
+                  A retrieval-augmented generative model that conditions on relevant reference cells to improve
+                  prediction of transcriptomic responses to gene perturbations.
+                </p>
+                <div class="pub-links">
+                  <span class="chip chip-venue">ICLR 2026 · Gen2 Workshop</span>
+                  <span class="chip">Retrieval-Augmented Generation</span>
+                </div>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-4.png" alt="brawlhalla" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Brawlhalla</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
+            <li class="pub-item">
+              <div class="pub-year">2026</div>
+              <div class="pub-body">
+                <h4 class="h4 pub-title">A Standardized Framework for Evaluating Gene-Expression Generative Models (GGE)</h4>
+                <p class="pub-authors">Andrea Rubbi, Andrea G. Di Francesco, Mohammad Lotfollahi, Pietro Liò</p>
+                <p class="pub-text">
+                  A reproducible benchmark and metric suite for rigorously comparing generative models of gene
+                  expression, with a focus on biological faithfulness and calibration.
+                </p>
+                <div class="pub-links">
+                  <span class="chip chip-venue">ICLR 2026 · Gen2 Workshop</span>
+                  <span class="chip chip-award">Top 10%</span>
+                  <a href="https://github.com/AndreaRubbi/GGE" target="_blank" rel="noopener" class="pub-link">
+                    <ion-icon name="logo-github"></ion-icon><span>Code</span>
+                  </a>
+                </div>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-5.png" alt="dsm." loading="lazy">
-                </figure>
-
-                <h3 class="project-title">DSM.</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
+            <li class="pub-item">
+              <div class="pub-year">2024</div>
+              <div class="pub-body">
+                <h4 class="h4 pub-title">Contextualized: A Heterogeneous Modeling Toolbox</h4>
+                <p class="pub-authors">Kellis Lab, MIT-CSAIL — contributing author</p>
+                <p class="pub-text">
+                  Contributor to an open-source toolbox for context-adaptive statistical models that vary with sample
+                  metadata — published in the Journal of Open Source Software.
+                </p>
+                <div class="pub-links">
+                  <span class="chip chip-venue">JOSS 2024</span>
+                  <span class="chip">Software</span>
+                </div>
+              </div>
             </li>
 
-            <li class="project-item  active" data-filter-item data-category="web design">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-6.png" alt="metaspark" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">MetaSpark</h3>
-
-                <p class="project-category">Web design</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-7.png" alt="summary" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Summary</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="applications">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-8.jpg" alt="task manager" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Task Manager</h3>
-
-                <p class="project-category">Applications</p>
-
-              </a>
-            </li>
-
-            <li class="project-item  active" data-filter-item data-category="web development">
-              <a href="#">
-
-                <figure class="project-img">
-                  <div class="project-item-icon-box">
-                    <ion-icon name="eye-outline"></ion-icon>
-                  </div>
-
-                  <img src="./assets/images/project-9.png" alt="arrival" loading="lazy">
-                </figure>
-
-                <h3 class="project-title">Arrival</h3>
-
-                <p class="project-category">Web development</p>
-
-              </a>
+            <li class="pub-item">
+              <div class="pub-year">2023</div>
+              <div class="pub-body">
+                <h4 class="h4 pub-title">Contextualized Machine Learning</h4>
+                <p class="pub-authors">Kellis Lab, MIT-CSAIL — contributing author</p>
+                <p class="pub-text">
+                  A framework for learning sample-specific, context-dependent models, applied to contextualized
+                  differential-expression analysis of biological data.
+                </p>
+                <div class="pub-links">
+                  <span class="chip">Preprint · arXiv</span>
+                  <span class="chip">Contextualized ML</span>
+                </div>
+              </div>
             </li>
 
           </ul>
+        </section>
 
+        <section class="timeline">
+
+          <div class="title-wrapper">
+            <div class="icon-box">
+              <ion-icon name="megaphone-outline"></ion-icon>
+            </div>
+            <h3 class="h3">News &amp; Milestones</h3>
+          </div>
+
+          <ol class="timeline-list">
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Started industrial placement at AstraZeneca</h4>
+              <p class="timeline-text">AI for antibody discovery and design — Cambridge.</p>
+              <span>Jul 2026</span>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Papers at ICML 2026 &amp; ICLR 2026</h4>
+              <p class="timeline-text">
+                Active hit discovery accepted at ICML; retrieval-augmented perturbation prediction and GGE
+                (top 10%) at the Gen2 Workshop, ICLR — attended both conferences.
+              </p>
+              <span>2026</span>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Visiting PhD student in Bayesian deep learning</h4>
+              <p class="timeline-text">Fortuin Group, Helmholtz AI, Munich — uncertainty estimation for single-cell models.</p>
+              <span>2024</span>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Research affiliate at MIT-CSAIL</h4>
+              <p class="timeline-text">Kellis Lab — contributing to the Contextualized machine-learning toolbox.</p>
+              <span>2023 — 2025</span>
+            </li>
+
+            <li class="timeline-item">
+              <h4 class="h4 timeline-item-title">Started PhD in Computational Biology</h4>
+              <p class="timeline-text">University of Cambridge &amp; Wellcome Sanger Institute.</p>
+              <span>2023</span>
+            </li>
+
+          </ol>
         </section>
 
       </article>
 
-
-
-
-
       <!--
         - #BLOG
+        NOTE: These are starter posts — replace the titles, dates and links
+        with your own writing (or wire "Read more" to real articles).
       -->
 
       <article class="blog" data-page="blog">
@@ -1000,179 +1029,547 @@
           <h2 class="h2 article-title">Blog</h2>
         </header>
 
-        <section class="blog-posts">
+        <section class="about-text">
+          <p>
+            Occasional notes on computational biology, machine learning and the messy, beautiful process of turning data
+            into biological insight.
+          </p>
+        </section>
 
-          <ul class="blog-posts-list">
+        <!--
+          BLOG — HOW TO WRITE / EDIT POSTS
+          The cards below are generated automatically from your posts.
+          To add or edit a post, open  assets/js/blog-posts.js  and edit the
+          BLOG_POSTS list there (each post supports full Markdown). You do NOT
+          need to touch this file. Cards + the pop-up reader are built by
+          assets/js/blog.js and shown newest-first.
+        -->
+        <section class="blog-section">
+          <ul class="blog-grid" data-blog-grid>
+            <!-- cards injected by blog.js -->
+          </ul>
+        </section>
 
-            <li class="blog-post-item">
-              <a href="#">
+      </article>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-1.jpg" alt="Design conferences in 2022" loading="lazy">
-                </figure>
+      <!--
+        - #PHOTOGRAPHY
+      -->
 
-                <div class="blog-content">
+      <article class="photography" data-page="photography">
 
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+        <header>
+          <h2 class="h2 article-title">Photography</h2>
+        </header>
 
-                    <span class="dot"></span>
+        <section class="about-text photo-intro">
+          <p class="photo-lead">
+            When I'm not teaching machines to read biology, I'm out with a camera learning to read light.
+            Photography is my analogue counterweight — no gradients, no GPUs, just a viewfinder and the
+            patience to wait for a moment to actually arrive.
+          </p>
+          <p>
+            I've come to think of it as <em>contemplatio</em> — the old Latin word for looking at something
+            long and hard enough that it changes you. Two inherited habits of seeing sit behind every frame
+            below. The Latin West reads the world in <em>lux et umbra</em>: light and shadow, time and
+            mortality — <em>seize the moment, and remember it will not keep.</em> The contemplative East reads
+            what the West leaves out: the pause, the empty space, the quiet beauty of things precisely because
+            they pass. I shoot mostly on Fujifilm glass, somewhere between documentary and daydream, and I've
+            paired each photograph here with the thought I was actually chasing when the shutter fell —
+            in Latin, Japanese, Chinese, Korean or Sanskrit. Not decoration. Directions for looking.
+          </p>
+        </section>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
+        <section class="photo-creed" aria-label="Two philosophies of seeing">
+          <div class="creed-col">
+            <p class="creed-head">Lux et Umbra · the Latin eye</p>
+            <p class="creed-term">Carpe diem <span>seize the day</span></p>
+            <p class="creed-term">Memento mori <span>remember you die</span></p>
+            <p class="creed-term">Festina lente <span>make haste, slowly</span></p>
+            <p class="creed-text">
+              To the Stoics, seeing clearly was a moral discipline. A Roman frame is built from light and its
+              loss — the sunbeam, the long shadow, the fact that the hour will not come again. You attend to
+              the world because it is leaving.
+            </p>
+          </div>
+          <div class="creed-col">
+            <p class="creed-head">無常 Mujō · the Eastern eye</p>
+            <p class="creed-term">道 Dào <span>the Way that cannot be named</span></p>
+            <p class="creed-term">一期一会 Ichi-go ichi-e <span>one time, one meeting</span></p>
+            <p class="creed-term">間 Ma <span>the charged interval, the pause</span></p>
+            <p class="creed-text">
+              From Kyoto to Seoul, the contemplative traditions prize what a Western frame crops out — the
+              emptiness that gives the subject room, the impermanence that makes a moment precious. Nothing
+              lasts; that is not the tragedy but the point.
+            </p>
+          </div>
+        </section>
 
-                  <h3 class="h3 blog-item-title">Design conferences in 2022</h3>
+        <ul class="photo-genres">
+          <li class="chip">Wildlife &amp; Birds</li>
+          <li class="chip">Street &amp; People</li>
+          <li class="chip">Travel &amp; Culture</li>
+          <li class="chip">Golden Hour</li>
+          <li class="chip">Long Exposure &amp; Night</li>
+          <li class="chip">Seascapes</li>
+        </ul>
 
-                  <p class="blog-text">
-                    Veritatis et quasi architecto beatae vitae dicta sunt, explicabo.
-                  </p>
+        <section class="photo-featured" aria-label="Featured photographs">
 
-                </div>
+          <!-- FEATURED 01 -->
+          <article class="featured-shot" data-reveal data-gallery-item data-type="Nature" data-date="Apr 2024" data-loc="Arashiyama, Kyoto"
+            data-title="道 · Michi — the Way"
+            data-note="The path curves and vanishes; you never see where it goes, you simply walk it. Laozi's first line, grown into bamboo.">
+            <figure class="featured-img gallery-img">
+              <img src="./Portfolio/DSCF0746.jpg" alt="Bamboo path at Arashiyama, Kyoto — photograph by Andrea Rubbi" loading="lazy">
+              <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+            </figure>
+            <div class="featured-meta">
+              <p class="featured-index">01 / Featured</p>
+              <h3 class="featured-title">Into the Green</h3>
+              <p class="featured-loc"><ion-icon name="location-outline"></ion-icon> Arashiyama, Kyoto · Japan</p>
+              <p class="featured-caption">
+                Dawn in the grove, before the tour buses — the one hour it is ever empty. The path bends and
+                disappears; you can't see where it leads, so you just walk. That is the whole of Taoism in a
+                gravel track. Overhead, the sun breaks through the canes in scattered coins of light — the
+                Japanese keep a word for exactly this and nothing else: <em>komorebi</em> (木漏れ日).
+              </p>
+              <p class="featured-concept">
+                <span class="concept-term">道 · Michi / Dào</span>
+                <span class="concept-gloss">the Way — Taoism &amp; Zen</span>
+              </p>
+              <p class="featured-verse">道可道，非常道 — "The Way that can be spoken is not the eternal Way." — Laozi, <em>Tao Te Ching</em>, ch.&nbsp;1</p>
+              <ul class="featured-exif">
+                <li><ion-icon name="camera-outline"></ion-icon> Fujifilm X-T4</li>
+                <li>XF 16-55mm</li>
+                <li>1/60s · f/4 · ISO 800</li>
+              </ul>
+            </div>
+          </article>
 
-              </a>
+          <!-- FEATURED 02 -->
+          <article class="featured-shot featured-shot--reverse" data-reveal data-gallery-item data-type="Wildlife" data-date="Jun 2025" data-loc="Farne Islands, England"
+            data-title="Festina lente · make haste, slowly"
+            data-note="The bird is all haste — 400 wingbeats a minute; the photographer is all patience. The frame is the exact place the two meet.">
+            <figure class="featured-img gallery-img">
+              <img src="./Portfolio/C10F0C50-3CD0-427A-82BD-B6EF2ED7396E.jpg" alt="Puffin coming in to land beside another on a cliff, Farne Islands — photograph by Andrea Rubbi" loading="lazy">
+              <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+            </figure>
+            <div class="featured-meta">
+              <p class="featured-index">02 / Featured</p>
+              <h3 class="featured-title">Twelve Wingbeats a Second</h3>
+              <p class="featured-loc"><ion-icon name="location-outline"></ion-icon> Farne Islands · England</p>
+              <p class="featured-caption">
+                One puffin already home on the ledge; one still coming in hot, orange feet out like landing gear.
+                They beat those tiny wings some 400 times a minute — roughly the number of frames I burned to
+                freeze a single one. But you can't <em>hurry</em> a bird into the right place; you hold the
+                lens still and let it arrive. Augustus called that <em>festina lente</em>. The Zen archers had
+                their own name for the shot you take without deciding to: <em>mushin</em> (無心), no-mind.
+              </p>
+              <p class="featured-concept">
+                <span class="concept-term">Festina lente</span>
+                <span class="concept-gloss">make haste slowly — Augustus, via Suetonius</span>
+              </p>
+              <p class="featured-verse">"Festina lente" — hasten slowly. Suetonius records it as the emperor Augustus' favourite maxim; he hurried at nothing.</p>
+              <ul class="featured-exif">
+                <li><ion-icon name="camera-outline"></ion-icon> Fujifilm X-T5</li>
+                <li>XF 100-400mm</li>
+                <li>1/2000s · f/5.6 · ISO 400</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- FEATURED 03 -->
+          <article class="featured-shot" data-reveal data-gallery-item data-type="Wildlife" data-date="Jun 2025" data-loc="Ligurian Sea, Italy"
+            data-title="Carpe diem · pluck the day"
+            data-note="Three hours of flat grey water, then one second of pure arc. Horace: trust tomorrow as little as you possibly can.">
+            <figure class="featured-img gallery-img">
+              <img src="./Portfolio/DSCF9103.jpg" alt="Bottlenose dolphin breaching clear of the sea — photograph by Andrea Rubbi" loading="lazy">
+              <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+            </figure>
+            <div class="featured-meta">
+              <p class="featured-index">03 / Featured</p>
+              <h3 class="featured-title">Break</h3>
+              <p class="featured-loc"><ion-icon name="location-outline"></ion-icon> Ligurian Sea · Italy</p>
+              <p class="featured-caption">
+                Three hours of flat grey water, then one full second airborne — the whole animal clear of the
+                sea, spray still hanging off its tail. The Greeks split time in two: <em>chronos</em>, the grey
+                hours that just tick by, and <em>kairós</em>, the one instant that opens and asks to be taken.
+                The Japanese archers name what gets you through the wait — <em>zanshin</em> (残心), the readiness
+                that never drops even when nothing is happening. And when it happens, Horace has the only sane
+                advice: pluck the day.
+              </p>
+              <p class="featured-concept">
+                <span class="concept-term">Carpe diem</span>
+                <span class="concept-gloss">pluck the day — Horace, Odes I.11</span>
+              </p>
+              <p class="featured-verse">"Carpe diem, quam minimum credula postero." — Horace — "Pluck the day, trusting the next as little as you can."</p>
+              <ul class="featured-exif">
+                <li><ion-icon name="camera-outline"></ion-icon> Fujifilm X-T5</li>
+                <li>XF 100-400mm</li>
+                <li>1/2500s · f/6.4 · ISO 320</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- FEATURED 04 -->
+          <article class="featured-shot featured-shot--reverse" data-reveal data-gallery-item data-type="Night" data-date="Jan 2026" data-loc="Rome, Italy"
+            data-title="Memento mori · remember you must die"
+            data-note="Built as Hadrian's tomb; floodlit gold two thousand years on. The stone holds still; the living blur past. Time alone is ours.">
+            <figure class="featured-img gallery-img">
+              <img src="./Portfolio/DSCF2544.jpg" alt="Blurred silhouettes crossing the bridge before floodlit Castel Sant'Angelo, Rome, at night — photograph by Andrea Rubbi" loading="lazy">
+              <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+            </figure>
+            <div class="featured-meta">
+              <p class="featured-index">04 / Featured</p>
+              <h3 class="featured-title">Long Shadows in Rome</h3>
+              <p class="featured-loc"><ion-icon name="location-outline"></ion-icon> Castel Sant'Angelo, Rome · Italy</p>
+              <p class="featured-caption">
+                No building says it plainer. Castel Sant'Angelo was raised as the <em>mausoleum</em> of the
+                emperor Hadrian — a tomb — and here it is, floodlit gold under a cold sky, the bronze archangel
+                still sheathing his sword on the roof. A slow shutter smears the passers-by into <em>umbrae</em>
+                — the Latin word means both "shadow" and "ghost of the dead." Seen against the stone
+                (<em>sub specie aeternitatis</em>, as Spinoza would later put it), it is the still figures who
+                turn out to be fleeting. In a Roman triumph a slave rode behind the general whispering the
+                oldest version of the thought: <em>respice post te; hominem te memento</em> — look behind you,
+                and remember you are only a man.
+              </p>
+              <p class="featured-concept">
+                <span class="concept-term">Memento mori</span>
+                <span class="concept-gloss">remember you must die — with lux et umbra</span>
+              </p>
+              <p class="featured-verse">"Omnia, Lucili, aliena sunt, tempus tantum nostrum est." — Seneca, <em>Epistulae</em> 1 — "Everything is on loan, Lucilius; time alone is ours."</p>
+              <ul class="featured-exif">
+                <li><ion-icon name="camera-outline"></ion-icon> Fujifilm X100V</li>
+                <li>23mm fixed</li>
+                <li>1/30s · f/2 · ISO 1600</li>
+              </ul>
+            </div>
+          </article>
+
+          <!-- FEATURED 05 -->
+          <article class="featured-shot" data-reveal data-gallery-item data-type="Street" data-date="Jul 2026" data-loc="Seoul, South Korea"
+            data-title="여백 · Yeobaek — the charged emptiness"
+            data-note="A stone guardian holds still while the bus, the light and one passer-by stream past. Laozi: soften your light, merge with the dust.">
+            <figure class="featured-img gallery-img">
+              <img src="./Portfolio/DSCF8587.jpg" alt="Stone guardian lion backlit by a golden-hour sunstar beside a city bus in Seoul — photograph by Andrea Rubbi" loading="lazy">
+              <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+            </figure>
+            <div class="featured-meta">
+              <p class="featured-index">05 / Featured</p>
+              <h3 class="featured-title">Golden Hour at Gwanghwamun</h3>
+              <p class="featured-loc"><ion-icon name="location-outline"></ion-icon> Seoul · South Korea</p>
+              <p class="featured-caption">
+                Seoul still sets stone guardians at its gates — <em>haetae</em>, the old mythical keepers — and
+                this one sat dead still while a red bus, a stranger and the whole restless city slid past behind
+                it. Stopped down to f/8, the low sun broke into a clean star right at its chest. Two ideas met in
+                one frame: the Korean painter's <em>yeobaek</em> (여백), the deliberate empty space that lets a
+                subject breathe; and Laozi's instruction to the sage — <em>soften the light, merge with the
+                dust</em> — which is, almost word for word, what a backlit guardian does at sunset. To stand
+                before such a figure and really look is what Sanskrit calls <em>darśana</em>: beholding, and
+                being beheld in return.
+              </p>
+              <p class="featured-concept">
+                <span class="concept-term">여백 · Yeobaek</span>
+                <span class="concept-gloss">the charged empty space — Korean aesthetics</span>
+              </p>
+              <p class="featured-verse">和其光，同其塵 — "Soften the glare, merge with the dust." — Laozi, <em>Tao Te Ching</em>, ch.&nbsp;56</p>
+              <ul class="featured-exif">
+                <li><ion-icon name="camera-outline"></ion-icon> Fujifilm X-T4</li>
+                <li>XF 35mm</li>
+                <li>1/1000s · f/8 · ISO 200</li>
+              </ul>
+            </div>
+          </article>
+
+        </section>
+
+        <section class="gallery">
+
+          <div class="gallery-head">
+            <h3 class="gallery-head-title">The Full Archive</h3>
+            <p class="gallery-head-sub">
+              Everything else, roughly in the order the shutter fired — and each frame handed a single idea to
+              carry it, drawn from the same two traditions. Hover for the word, click to go full-frame and read
+              the thought.
+            </p>
+          </div>
+
+          <ul class="gallery-list">
+
+            <li class="gallery-item" data-gallery-item data-date="15 Jul 2026" data-type="Travel"
+              data-title="幽玄 · Yūgen — the deep mystery"
+              data-note="The grove hides its far end in green shadow; yūgen is the grace of what is only hinted at, never shown.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF0746.jpg" alt="Travel photograph by Andrea Rubbi — 15 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-2.jpg" alt="Best fonts every designer" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Best fonts every designer</h3>
-
-                  <p class="blog-text">
-                    Sed ut perspiciatis, nam libero tempore, cum soluta nobis est eligendi.
-                  </p>
-
-                </div>
-
-              </a>
+            <li class="gallery-item" data-gallery-item data-date="15 Jul 2026" data-type="Nature"
+              data-title="自然 · Shizen — self-so"
+              data-note="Nothing here was arranged. Shizen is the world being effortlessly, exactly itself.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF0778.jpg" alt="Nature photograph by Andrea Rubbi — 15 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-3.jpg" alt="Design digest #80" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">Design digest #80</h3>
-
-                  <p class="blog-text">
-                    Excepteur sint occaecat cupidatat no proident, quis nostrum exercitationem ullam corporis suscipit.
-                  </p>
-
-                </div>
-
-              </a>
+            <li class="gallery-item" data-gallery-item data-date="18 Sep 2024" data-type="Architecture"
+              data-title="Ars longa, vita brevis"
+              data-note="The work outlasts the maker — art is long, life is short (Hippocrates, by way of Seneca).">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF0780.jpg" alt="Architecture photograph by Andrea Rubbi — 18 Sep 2024" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-4.jpg" alt="UI interactions of the week" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">UI interactions of the week</h3>
-
-                  <p class="blog-text">
-                    Enim ad minim veniam, consectetur adipiscing elit, quis nostrud exercitation ullamco laboris nisi.
-                  </p>
-
-                </div>
-
-              </a>
+            <li class="gallery-item" data-gallery-item data-date="18 Sep 2024" data-type="Street"
+              data-title="物の哀れ · Mono no aware"
+              data-note="A gentle ache at how fast the ordinary passes — the whole of street photography in four syllables.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF0947.jpg" alt="Street photograph by Andrea Rubbi — 18 Sep 2024" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
-
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-5.jpg" alt="The forgotten art of spacing" loading="lazy">
-                </figure>
-
-                <div class="blog-content">
-
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
-
-                    <span class="dot"></span>
-
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
-
-                  <h3 class="h3 blog-item-title">The forgotten art of spacing</h3>
-
-                  <p class="blog-text">
-                    Maxime placeat, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                  </p>
-
-                </div>
-
-              </a>
+            <li class="gallery-item" data-gallery-item data-date="5 Aug 2024" data-type="Seascape"
+              data-title="上善若水 · Like water"
+              data-note="Laozi: the highest good is like water — it yields to everything and slowly wears all of it down.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF1237.jpg" alt="Seascape photograph by Andrea Rubbi — 5 Aug 2024" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
             </li>
 
-            <li class="blog-post-item">
-              <a href="#">
+            <li class="gallery-item" data-gallery-item data-date="6 Aug 2024" data-type="Travel"
+              data-title="Solvitur ambulando"
+              data-note="It is solved by walking — the oldest cure for a restless mind, and why half of these frames exist.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF1649.jpg" alt="Travel photograph by Andrea Rubbi — 6 Aug 2024" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                <figure class="blog-banner-box">
-                  <img src="./assets/images/blog-6.jpg" alt="Design digest #79" loading="lazy">
-                </figure>
+            <li class="gallery-item" data-gallery-item data-date="20 Jun 2025" data-type="Portrait"
+              data-title="दर्शन · Darśana — beholding"
+              data-note="In Sanskrit, to truly see someone is also to be seen; a portrait is a gaze that runs both ways.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF1925.jpg" alt="Portrait photograph by Andrea Rubbi — 20 Jun 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                <div class="blog-content">
+            <li class="gallery-item" data-gallery-item data-date="13 Aug 2025" data-type="Landscape"
+              data-title="Sub specie aeternitatis"
+              data-note="Seen under the aspect of eternity (Spinoza), the hills do not care what year it is — and that is a relief.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF2282.JPG" alt="Landscape photograph by Andrea Rubbi — 13 Aug 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                  <div class="blog-meta">
-                    <p class="blog-category">Design</p>
+            <li class="gallery-item" data-gallery-item data-date="5 Jan 2026" data-type="Night"
+              data-title="Umbra · shadow & shade"
+              data-note="One Latin word for both the shadow and the ghost of the dead. Night photography lives inside it.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF2544.jpg" alt="Night photograph by Andrea Rubbi — 5 Jan 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                    <span class="dot"></span>
+            <li class="gallery-item" data-gallery-item data-date="7 Aug 2024" data-type="Seascape"
+              data-title="無常 · Mujō — impermanence"
+              data-note="No two waves, ever. The sea is impermanence you can point a lens at.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF2975.jpg" alt="Seascape photograph by Andrea Rubbi — 7 Aug 2024" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                    <time datetime="2022-02-23">Fab 23, 2022</time>
-                  </div>
+            <li class="gallery-item" data-gallery-item data-date="5 Apr 2025" data-type="Street"
+              data-title="間 · Ma — the interval"
+              data-note="The charged gap between figures; in Japanese the empty space is not nothing — it is the composition.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF3059.jpg" alt="Street photograph by Andrea Rubbi — 5 Apr 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                  <h3 class="h3 blog-item-title">Design digest #79</h3>
+            <li class="gallery-item" data-gallery-item data-date="1 Jun 2025" data-type="Sport"
+              data-title="無心 · Mushin — no-mind"
+              data-note="Peak effort with the thinking switched off; the body already knows. Zen called it no-mind.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF5866.jpg" alt="Sport photograph by Andrea Rubbi — 1 Jun 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                  <p class="blog-text">
-                    Optio cumque nihil impedit uo minus quod maxime placeat, velit esse cillum.
-                  </p>
+            <li class="gallery-item" data-gallery-item data-date="27 Jun 2025" data-type="Wildlife"
+              data-title="逍遙遊 · Free wandering"
+              data-note="Zhuangzi's free and easy wandering — the animal owes you nothing and goes wherever it likes.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF6488.jpg" alt="Wildlife photograph by Andrea Rubbi — 27 Jun 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-                </div>
+            <li class="gallery-item" data-gallery-item data-date="8 Jun 2025" data-type="Architecture"
+              data-title="Contemplatio"
+              data-note="From templum, a space marked out for watching. Some buildings ask only to be looked at, slowly.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF7068.jpg" alt="Architecture photograph by Andrea Rubbi — 8 Jun 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
 
-              </a>
+            <li class="gallery-item" data-gallery-item data-date="5 Jul 2026" data-type="Travel"
+              data-title="καιρός · Kairós"
+              data-note="Not clock-time but the right time — the Greek word for the instant that opens and asks to be taken.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF8117.jpg" alt="Travel photograph by Andrea Rubbi — 5 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="5 Jul 2026" data-type="Travel"
+              data-title="一期一会 · Ichi-go ichi-e"
+              data-note="One time, one meeting. You will never stand exactly here, in exactly this light, again.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF8169.jpg" alt="Travel photograph by Andrea Rubbi — 5 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="5 Jul 2026" data-type="Architecture"
+              data-title="陰陽 · Yīn-yáng"
+              data-note="Literally the shaded slope and the sunlit one; architecture is only light deciding where to fall.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF8269-2.jpg" alt="Architecture photograph by Andrea Rubbi — 5 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="6 Jul 2026" data-type="Street"
+              data-title="눈치 · Nunchi"
+              data-note="The Korean art of reading a room without a word spoken — which is also how you find the frame.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF8587.jpg" alt="Street photograph by Andrea Rubbi — 6 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="10 Jul 2026" data-type="Nature"
+              data-title="木漏れ日 · Komorebi"
+              data-note="Tree-leaking sunlight; the Japanese kept a word for exactly this, and nothing else.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF8749.jpg" alt="Nature photograph by Andrea Rubbi — 10 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="12 Jul 2026" data-type="Travel"
+              data-title="Tempus fugit"
+              data-note="Fugit irreparabile tempus (Virgil) — time flees and cannot be brought back. So you photograph it.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF8802.jpg" alt="Travel photograph by Andrea Rubbi — 12 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="12 Jul 2026" data-type="Portrait"
+              data-title="정 · Jeong"
+              data-note="The slow, unnameable Korean bond that grows between people — warmth that outlasts the shutter.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF8917.jpg" alt="Portrait photograph by Andrea Rubbi — 12 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="28 Jun 2025" data-type="Wildlife"
+              data-title="क्षणिक · Kṣaṇika"
+              data-note="The Buddhist teaching that reality is a chain of vanishing instants. This one lasted about a second.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF9103.jpg" alt="Wildlife photograph by Andrea Rubbi — 28 Jun 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="13 Jul 2026" data-type="Street"
+              data-title="πάντα ῥεῖ · Panta rhei"
+              data-note="Everything flows (Heraclitus). You cannot step into the same street, or the same river, twice.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF9234.jpg" alt="Street photograph by Andrea Rubbi — 13 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="28 Jun 2025" data-type="Portrait"
+              data-title="한 · Han"
+              data-note="The deep Korean current of longing and endured sorrow; a single face can carry a whole history.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF9268.JPG" alt="Portrait photograph by Andrea Rubbi — 28 Jun 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="13 Jul 2026" data-type="Nature"
+              data-title="萬物 · Wànwù"
+              data-note="The ten thousand things — the Taoist name for the whole teeming catalogue of what exists.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSCF9594.jpg" alt="Nature photograph by Andrea Rubbi — 13 Jul 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="30 May 2026" data-type="Landscape"
+              data-title="Natura"
+              data-note="The Stoic aim was to live secundum naturam, in accordance with nature. It helps to go and look at some.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/DSC_0103.jpg" alt="Landscape photograph by Andrea Rubbi — 30 May 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="1 May 2026" data-type="Landscape"
+              data-title="守靜篤 · Hold to stillness"
+              data-note="Reach utmost emptiness, hold fast to stillness — Laozi, ch.16 — a landscape's standing instruction.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/_DSF6238.jpg" alt="Landscape photograph by Andrea Rubbi — 1 May 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="13 May 2026" data-type="Sport"
+              data-title="氣 · Qì"
+              data-note="The vital breath that moves through effort; every rower and runner is just qì in a hurry.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/Frame-13-05-2026-12-20-18.jpg" alt="Sport photograph by Andrea Rubbi — 13 May 2026" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
+            </li>
+
+            <li class="gallery-item" data-gallery-item data-date="12 Jun 2025" data-type="Street"
+              data-title="見立て · Mitate"
+              data-note="Seeing one thing as another — a puddle as sky, a stranger as a story. The street rewards it.">
+              <figure class="gallery-img">
+                <img src="./Portfolio/E046734C-DB48-4EC8-ACE3-84B67B9E9703-28410-000008DCB4F70D17.JPG" alt="Street photograph by Andrea Rubbi — 12 Jun 2025" loading="lazy">
+                <div class="gallery-icon-box"><ion-icon name="expand-outline"></ion-icon></div>
+              </figure>
             </li>
 
           </ul>
+
+          <div class="photo-coda">
+            <p class="coda-verse">Seize the day — because you meet it <span>only once</span>.</p>
+            <p>
+              East and West reach the same doorway from opposite sides. <em>Carpe diem</em> and
+              <em>一期一会</em>; <em>memento mori</em> and <em>無常</em> — one tradition urges you to grip the
+              fleeting moment, the other to let it fall open. A camera does both at once: it keeps the instant
+              and admits, in the same click, that the instant is already gone. That contradiction is the whole
+              of the art. Thank you for looking slowly.
+            </p>
+          </div>
 
         </section>
 
@@ -1227,6 +1624,63 @@
 
     </div>
 
+
+    <!--
+      - #LIGHTBOX (photo gallery overlay)
+    -->
+
+    <div class="lightbox" data-lightbox>
+
+      <div class="lightbox-overlay" data-lightbox-close></div>
+
+      <button class="lightbox-btn lightbox-close" data-lightbox-close aria-label="Close">
+        <ion-icon name="close-outline"></ion-icon>
+      </button>
+
+      <button class="lightbox-btn lightbox-prev" data-lightbox-prev aria-label="Previous">
+        <ion-icon name="chevron-back-outline"></ion-icon>
+      </button>
+
+      <button class="lightbox-btn lightbox-next" data-lightbox-next aria-label="Next">
+        <ion-icon name="chevron-forward-outline"></ion-icon>
+      </button>
+
+      <figure class="lightbox-content">
+        <img src="" alt="Photograph by Andrea Rubbi" data-lightbox-img>
+        <figcaption class="lightbox-caption" data-lightbox-caption>
+          <p class="lightbox-title" data-lightbox-title></p>
+          <div class="lightbox-cap-row">
+            <span class="lightbox-type" data-lightbox-type></span>
+            <span class="lightbox-date" data-lightbox-date></span>
+          </div>
+          <p class="lightbox-note" data-lightbox-note></p>
+        </figcaption>
+      </figure>
+
+    </div>
+
+    <!--
+      BLOG READER — pop-up shown when a blog card is clicked.
+      Filled in by assets/js/blog.js; don't edit the text here.
+    -->
+    <div class="blog-reader" data-blog-reader>
+      <div class="blog-reader-overlay" data-reader-close></div>
+      <div class="blog-reader-panel">
+        <button class="blog-reader-close" data-reader-close aria-label="Close">
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+        <div class="blog-reader-banner" data-reader-banner></div>
+        <div class="blog-reader-body">
+          <div class="blog-reader-meta">
+            <span class="chip" data-reader-tag></span>
+            <time data-reader-date></time>
+          </div>
+          <h2 class="blog-reader-title" data-reader-title></h2>
+          <div class="blog-reader-content" data-reader-content></div>
+        </div>
+      </div>
+    </div>
+
   </main>
 
 
@@ -1237,7 +1691,16 @@
   <!--
     - custom js link
   -->
+  <script src="./assets/js/hero.js"></script>
   <script src="./assets/js/script.js"></script>
+
+  <!--
+    - blog engine: Markdown renderer (marked) + your posts + the blog logic.
+    - To write posts, edit assets/js/blog-posts.js
+  -->
+  <script src="https://cdn.jsdelivr.net/npm/marked@12.0.2/marked.min.js"></script>
+  <script src="./assets/js/blog-posts.js"></script>
+  <script src="./assets/js/blog.js"></script>
 
   <!--
     - ionicon link
